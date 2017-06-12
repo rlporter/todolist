@@ -1,18 +1,17 @@
 // Add your JS here.
-inputElement.addEventListener("keypress", newTodo, true); {
-    if (keyCode == 13);
-}
-  function newTodo(e) {
-  let element = document.querySelector('.todo-List');
-  let listItem = document.createElement('li');
-  listItem.textContent = " ";
-  console.log(listItem);
-  element.appendChild( listItem );
-  var div = document.createElement("div");
-  document.body.appendChild(div);
-  element.classList.add("view");
 
+let inputElement=document.querySelector(".new-todo");
+inputElement.addEventListener("keypress", newTodo);
+
+function newTodo(e) {
+  if (e.keyCode == 13){
+    let element = document.querySelector('.todo-list');
+    let listItem = document.createElement('li');
+    const currentItem = e.target.value;
+    listItem.innerHTML="<div class='view'><label>" + currentItem + "</label></div>"
+    element.appendChild( listItem );
+    inputElement.value="";
   }
   return newTodo;
 
-}
+  }
